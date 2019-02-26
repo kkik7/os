@@ -1,10 +1,6 @@
 package project.model.user;
 
-import com.sun.jndi.cosnaming.IiopUrl;
-import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
-
 import java.time.LocalDate;
-import java.util.List;
 
 public class User {
 
@@ -13,15 +9,14 @@ public class User {
     private String email;
     private LocalDate birth;
 
+    public User() {
+    }
 
     public User(String name, String phone, String email, LocalDate birth) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.birth = birth;
-    }
-
-    public User() {
     }
 
     public String getName() {

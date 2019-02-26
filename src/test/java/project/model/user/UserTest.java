@@ -1,13 +1,10 @@
 package project.model.user;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
-
 
 public class UserTest {
 
@@ -15,27 +12,35 @@ public class UserTest {
     String phone;
     String email;
     LocalDate birth;
-    User user1, user2;
+    User user = new User();
 
-    @Before
-    public void initialize() {
-
+    @Test
+    public void testGetters() {
         name = "Pedro";
         phone = "919888777";
         email = "pedro@gmail.com";
         birth = LocalDate.of(1990, 01, 01);
-
-        User user1 = new User();
-        user1.setName(name);
-        user1.setPhone(phone);
-        user1.setEmail(email);
-        user1.setBirth(birth);
-        User user2 = new User("Ricardo", "923444555", "ricardo@gmail.com", LocalDate.of(1990,02, 01));
+        User user1 = new User(name, phone, email, birth);
+        assertEquals(name ,user1.getName());
+        assertEquals(phone ,user1.getPhone());
+        assertEquals(email ,user1.getEmail());
+        assertEquals(birth ,user1.getBirth());
     }
 
     @Test
-    public void testGetName() {
-        assertEquals(name ,user1.getName());
+    public void testSetters() {
+        name = "Ricardo";
+        phone = "92244455";
+        email = "ricardo@gmail.com";
+        birth = LocalDate.of(1990, 06, 01);
+        user.setName(name);
+        user.setPhone(phone);
+        user.setEmail(email);
+        user.setBirth(birth);
+        assertEquals(name ,user.getName());
+        assertEquals(phone ,user.getPhone());
+        assertEquals(email ,user.getEmail());
+        assertEquals(birth ,user.getBirth());
     }
 
 
