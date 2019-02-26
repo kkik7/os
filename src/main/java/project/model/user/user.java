@@ -12,15 +12,16 @@ public class User {
     private String phone;
     private String email;
     private LocalDate birth;
-    private List<Address> addressList;
 
 
-    public User(String name, String phone, String email, LocalDate birth, List<Address> addressList) {
+    public User(String name, String phone, String email, LocalDate birth) {
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.birth = birth;
-        this.addressList = addressList;
+    }
+
+    public User() {
     }
 
     public String getName() {
@@ -53,13 +54,5 @@ public class User {
 
     public void setBirth(LocalDate birth) {
         this.birth = birth;
-    }
-
-    public List<Address> getAddressList() {
-        return addressList;
-    }
-
-    public void setAddressList(List<Address> addressList) {
-        this.addressList = addressList;
     }
 }
